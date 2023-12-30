@@ -71,28 +71,6 @@ function MyTabs() {
         name="Home"
         component={Home}
         options={{
-          // tabBarLabel: "",
-          // tabBarIcon: ({ focused }) => {
-          //   return (
-          //     <View
-          //       style={{
-          //         alignItems: "center",
-          //         justifyContent: "center",
-          //         backgroundColor: focused ? "black" : "#dd2374",
-          //         borderRadius: 30,
-          //         height: 50,
-          //         width: 50,
-          //       }}
-          //     >
-          //       <HomeIcon
-          //         name="Home"
-          //         size={30}
-          //         // color={focused ? "white" : "gray"}
-          //         color="white"
-          //       />
-          //     </View>
-          //   );
-          // },
           tabBarIcon: ({ focused, color, size }) =>
             focused ? (
               <UserIcon
