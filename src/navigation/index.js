@@ -13,6 +13,10 @@ import {
   HomeModernIcon,
   UserIcon,
 } from "react-native-heroicons/outline";
+import {
+  HomeIcon as HomeIconSolid,
+  UserIcon as UserIconSolid,
+} from "react-native-heroicons/solid";
 import ChooseService from "../screens/ChooseService";
 import Calender from "../screens/Calender";
 import Profile from "../screens/Profile";
@@ -56,33 +60,16 @@ function MyTabs() {
         tabBarInactiveTintColor: "#fff",
       }}
     >
-      {/* <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          presentation: "fullScreenModal",
-          tabBarLabel: "",
-          tabBarIcon: ({ color }) => (
-            <HomeIcon name="home" color={color} size={"30"} />
-          ),
-        }}
-      /> */}
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: ({ focused, color, size }) =>
+          tabBarLabel: "",
+          tabBarIcon: ({ focused, color }) =>
             focused ? (
-              <UserIcon
-                name="home-filled"
-                size={size}
-                color={color}
-                style={{
-                  backgroundColor: "gray",
-                }}
-              />
+              <HomeIconSolid name="home-filled" size="34" color={color} />
             ) : (
-              <HomeModernIcon name="home-outlined" size={size} color={color} />
+              <HomeIcon name="home-filled" size="30" color={color} />
             ),
         }}
       />
@@ -90,33 +77,12 @@ function MyTabs() {
         name="Profile"
         component={Profile}
         options={{
-          // tabBarLabel: "",
-          // tabBarIcon: ({ focused }) => {
-          //   return (
-          //     <View
-          //       style={{
-          //         alignItems: "center",
-          //         justifyContent: "center",
-          //         backgroundColor: focused ? "black" : "#dd2374",
-          //         borderRadius: 30,
-          //         height: 50,
-          //         width: 50,
-          //       }}
-          //     >
-          //       <UserIcon
-          //         name="Profile"
-          //         size={30}
-          //         // color={focused ? "white" : "gray"}
-          //         color="white"
-          //       />
-          //     </View>
-          //   );
-          // },
+          tabBarLabel: "",
           tabBarIcon: ({ focused, color, size }) =>
             focused ? (
-              <UserIcon name="home-filled" size={size} color={color} />
+              <UserIconSolid name="home-filled" size="34" color={color} />
             ) : (
-              <HomeModernIcon name="home-outlined" size={size} color={color} />
+              <UserIcon name="home-outlined" size="30" color={color} />
             ),
         }}
       />
