@@ -1,11 +1,11 @@
 import { View, TouchableOpacity, Image, Text, ScrollView } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
-
 export default function Home() {
   const navigation = useNavigation();
-  const services = [
+
+  services = [
     {
       name: "Haircut",
       image: require("../../assets/splach.png"),
@@ -46,12 +46,12 @@ export default function Home() {
         >
           <Image
             style={{
-              width: 70,
-              height: 70,
+              width: 60,
+              height: 60,
               resizeMode: "cover",
               borderRadius: 50,
             }}
-            source={require("../../assets/splach.png")}
+            source={require("../../assets/bgprofile.png")}
           />
         </View>
       </View>
@@ -87,52 +87,51 @@ export default function Home() {
       </View>
       {/* // services container */}
       <View className="px-4">
-        <Text className="text-2xl font-bold text-black mt-4">Services</Text>
-
-        <View className="py-4 flex-wrap flex-row items-start justify-center gap-5">
-          {services.map((service, index) => (
-            <TouchableOpacity
-              key={index}
-              className="items-center justify-center w-[100px]"
-            >
-              <Image
-                style={{
-                  resizeMode: "cover",
-                  width: 70,
-                  height: 70,
-                  borderRadius: 50,
-                }}
-                source={service.image}
-              />
-              <Text className="text-center p-2">{service.name}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("ChooseService")}
-          className="
-      bg-[#dd2374]
-        rounded-full
-        w-[70%]
-        py-4
-        mb-4
-        self-center
-        items-center"
-        >
-          <Text
-            style={{
-              fontSize: 16,
-              fontWeight: "700",
-              textAlign: "center",
-              color: "#FFFF",
-            }}
-          >
-            Choose Services
+        <View className="flex-1 justify-between flex-row items-center">
+          <Text className="text-xl font-bold text-black mt-4">
+            What are you looking for?
           </Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("ChooseService")}
+          >
+            <Text className="text-sm font-medium  mt-4 text-[#dd2374]">
+              View all
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <View className="py-4 flex-wrap flex-row items-center justify-center gap-5">
+          <ServicesCard
+            text="HairCut"
+            image={require("../../assets/barder1.png")}
+          />
+          <ServicesCard
+            text="NailCut"
+            image={require("../../assets/barder1.png")}
+          />
+          <ServicesCard
+            text="HairPainting"
+            image={require("../../assets/barder1.png")}
+          />
+          <ServicesCard
+            text="HairCut"
+            image={require("../../assets/barder1.png")}
+          />
+          <ServicesCard
+            text="HairCut"
+            image={require("../../assets/barder1.png")}
+          />
+          <ServicesCard
+            text="HairCut"
+            image={require("../../assets/barder1.png")}
+          />
+          <ServicesCard
+            text="HairCut"
+            image={require("../../assets/barder1.png")}
+          />
+        </View>
       </View>
       {/* // barber container */}
-
       <View className="px-4">
         <Text className="text-2xl font-bold text-black mt-4">
           Our Top Barbers
@@ -179,8 +178,71 @@ export default function Home() {
               <Text className="font-medium text-white px-4">javii</Text>
             </View>
           </View>
+          <View className="bg-[#000000] rounded-2xl m-2">
+            <Image
+              style={{
+                width: 140,
+                resizeMode: "cover",
+              }}
+              source={require("../../assets/barder1.png")}
+            />
+            <View className="py-2">
+              <Text className="font-medium text-white px-4">javii</Text>
+            </View>
+          </View>
         </ScrollView>
       </View>
     </ScrollView>
+  );
+}
+
+function ServicesCard({ text, image }) {
+  const navigation = useNavigation();
+  return (
+    <TouchableOpacity
+      onPress={() => navigation.navigate("ChooseService")}
+      style={{
+        margin: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        elevation: 5,
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        borderRadius: 10,
+      }}
+    >
+      <Image
+        style={{
+          width: 170,
+          resizeMode: "cover",
+          borderRadius: 10,
+        }}
+        source={image}
+      />
+      <View
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          padding: 10,
+          borderBottomLeftRadius: 10,
+          borderBottomRightRadius: 10,
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 0,
+            height: -2,
+          },
+          shadowOpacity: 0.25,
+          shadowRadius: 3.84,
+        }}
+      >
+        <Text className="text-white">{text}</Text>
+      </View>
+    </TouchableOpacity>
   );
 }

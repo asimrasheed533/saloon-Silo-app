@@ -6,14 +6,16 @@ import {
   SafeAreaView,
   ScrollView,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
+import { CheckBadgeIcon } from "react-native-heroicons/outline";
 import { useNavigation } from "@react-navigation/native";
 import { ChevronLeftIcon } from "react-native-heroicons/outline";
 import { StatusBar } from "expo-status-bar";
 
 export default function ChooseService() {
   const navigation = useNavigation();
-  const services = [
+  const [selectedCount, setSelectedCount] = useState(0);
+  const [services, setServices] = useState([
     {
       name: "Haircut",
       image: require("../../assets/splach.png"),
@@ -38,39 +40,12 @@ export default function ChooseService() {
       name: "Haircut & Beard",
       image: require("../../assets/splach.png"),
     },
-    {
-      name: "Haircut & Beard",
-      image: require("../../assets/splach.png"),
-    },
-    {
-      name: "Haircut & Beard",
-      image: require("../../assets/splach.png"),
-    },
-    {
-      name: "Haircut & Beard",
-      image: require("../../assets/splach.png"),
-    },
-    {
-      name: "Haircut & Beard",
-      image: require("../../assets/splach.png"),
-    },
-    {
-      name: "Haircut & Beard",
-      image: require("../../assets/splach.png"),
-    },
-    {
-      name: "Haircut & Beard",
-      image: require("../../assets/splach.png"),
-    },
-    {
-      name: "Haircut & Beard",
-      image: require("../../assets/splach.png"),
-    },
-    {
-      name: "Haircut & Beard",
-      image: require("../../assets/splach.png"),
-    },
-  ];
+  ]);
+  const toggleSelection = (index) => {
+    const updatedServices = [...services];
+    updatedServices[index].isSelected = !updatedServices[index].isSelected;
+    setServices(updatedServices);
+  };
   return (
     <SafeAreaView className="flex-1 bg-white">
       <StatusBar style="dark" />
@@ -103,12 +78,12 @@ export default function ChooseService() {
         <Text className="text-2xl font-medium text-black mt-4">
           Select Services
         </Text>
-
         <View className="py-4 flex-wrap flex-row items-start justify-center gap-5">
           {services.map((service, index) => (
             <TouchableOpacity
               key={index}
               className="items-center justify-center w-[100px]"
+              onPress={() => toggleSelection(index)}
             >
               <Image
                 style={{
@@ -120,11 +95,25 @@ export default function ChooseService() {
                 source={service.image}
               />
               <Text className="text-center p-2">{service.name}</Text>
+              {/* Checkmark or any other indicator */}
+              {service.isSelected && (
+                <CheckBadgeIcon
+                  name="home-filled"
+                  size="34"
+                  color="green"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    zIndex: 1,
+                  }}
+                />
+              )}
             </TouchableOpacity>
           ))}
         </View>
       </ScrollView>
-      <TouchableOpacity
+      {/* <TouchableOpacity
         onPress={() => navigation.navigate("Calender")}
         className="
       bg-[#000000]
@@ -144,6 +133,38 @@ export default function ChooseService() {
           }}
         >
           Next
+        </Text>
+      </TouchableOpacity> */}
+      {/* Choose Services Button */}
+      <TouchableOpacity
+        onPress={() => {
+          if (selectedCount > 0) {
+            navigation.navigate("ChooseService");
+          } else {
+            // Handle the case when no item is selected
+            alert("Please select at least one service.");
+          }
+        }}
+        style={{
+          backgroundColor: selectedCount > 0 ? "red" : "gray", // Change color based on selection
+          borderRadius: 25,
+          paddingVertical: 12,
+          marginBottom: 20,
+          marginHorizontal: 40,
+          alignItems: "center",
+        }}
+      >
+        <Text
+          style={{
+            fontSize: 16,
+            fontWeight: "700",
+            textAlign: "center",
+            color: "#FFFF",
+          }}
+        >
+          {selectedCount > 0
+            ? `Choose ${selectedCount} Services`
+            : "Choose Services"}
         </Text>
       </TouchableOpacity>
     </SafeAreaView>

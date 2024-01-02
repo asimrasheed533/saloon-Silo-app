@@ -10,12 +10,13 @@ import Home from "../screens/Home";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
   HomeIcon,
-  HomeModernIcon,
+  CalendarIcon,
   UserIcon,
 } from "react-native-heroicons/outline";
 import {
   HomeIcon as HomeIconSolid,
   UserIcon as UserIconSolid,
+  CalendarIcon as CalendarSolid,
 } from "react-native-heroicons/solid";
 import ChooseService from "../screens/ChooseService";
 import Calender from "../screens/Calender";
@@ -36,7 +37,7 @@ export default function index() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="MyTabs" component={MyTabs} />
-        <Stack.Screen name="ChooseService" component={ChooseService} />
+        {/* <Stack.Screen name="ChooseService" component={ChooseService} /> */}
         <Stack.Screen name="Calender" component={Calender} />
       </Stack.Navigator>
     </NavigationContainer>
@@ -70,6 +71,19 @@ function MyTabs() {
               <HomeIconSolid name="home-filled" size="34" color={color} />
             ) : (
               <HomeIcon name="home-filled" size="30" color={color} />
+            ),
+        }}
+      />
+      <Tab.Screen
+        name="ChooseService"
+        component={ChooseService}
+        options={{
+          tabBarLabel: "",
+          tabBarIcon: ({ focused, color }) =>
+            focused ? (
+              <CalendarSolid name="home-filled" size="34" color={color} />
+            ) : (
+              <CalendarIcon name="home-filled" size="30" color={color} />
             ),
         }}
       />
