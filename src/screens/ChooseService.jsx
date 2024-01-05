@@ -14,37 +14,43 @@ import { StatusBar } from "expo-status-bar";
 
 export default function ChooseService() {
   const navigation = useNavigation();
-  const [selectedCount, setSelectedCount] = useState(0);
   const [services, setServices] = useState([
     {
       name: "Haircut",
       image: require("../../assets/splach.png"),
+      isSelected: false,
     },
     {
       name: "Beard",
       image: require("../../assets/splach.png"),
+      isSelected: false,
     },
     {
       name: "Haircut",
       image: require("../../assets/splach.png"),
+      isSelected: false,
     },
     {
       name: "Haircut & Beard",
       image: require("../../assets/splach.png"),
+      isSelected: false,
     },
     {
       name: "Haircut & Beard",
       image: require("../../assets/splach.png"),
+      isSelected: false,
     },
     {
       name: "Haircut & Beard",
       image: require("../../assets/splach.png"),
+      isSelected: false,
     },
   ]);
   const toggleSelection = (index) => {
     const updatedServices = [...services];
     updatedServices[index].isSelected = !updatedServices[index].isSelected;
     setServices(updatedServices);
+    console.log(services[index].isSelected);
   };
   return (
     <SafeAreaView className="flex-1 bg-white">
@@ -113,40 +119,11 @@ export default function ChooseService() {
           ))}
         </View>
       </ScrollView>
-      {/* <TouchableOpacity
-        onPress={() => navigation.navigate("Calender")}
-        className="
-      bg-[#000000]
-        rounded-full
-        py-4
-        px-8
-        mb-3
-        mx-14
-        items-center"
-      >
-        <Text
-          style={{
-            fontSize: 16,
-            fontWeight: "700",
-            textAlign: "center",
-            color: "#FFFF",
-          }}
-        >
-          Next
-        </Text>
-      </TouchableOpacity> */}
+
       {/* Choose Services Button */}
       <TouchableOpacity
-        onPress={() => {
-          if (selectedCount > 0) {
-            navigation.navigate("ChooseService");
-          } else {
-            // Handle the case when no item is selected
-            alert("Please select at least one service.");
-          }
-        }}
         style={{
-          backgroundColor: selectedCount > 0 ? "red" : "gray", // Change color based on selection
+          backgroundColor: "#dd2374",
           borderRadius: 25,
           paddingVertical: 12,
           marginBottom: 20,
@@ -162,9 +139,7 @@ export default function ChooseService() {
             color: "#FFFF",
           }}
         >
-          {selectedCount > 0
-            ? `Choose ${selectedCount} Services`
-            : "Choose Services"}
+          Choose Services
         </Text>
       </TouchableOpacity>
     </SafeAreaView>
