@@ -117,18 +117,6 @@ export default function Home() {
             text="HairCut"
             image={require("../../assets/barder1.png")}
           />
-          <ServicesCard
-            text="HairCut"
-            image={require("../../assets/barder1.png")}
-          />
-          <ServicesCard
-            text="HairCut"
-            image={require("../../assets/barder1.png")}
-          />
-          <ServicesCard
-            text="HairCut"
-            image={require("../../assets/barder1.png")}
-          />
         </View>
       </View>
       {/* // barber container */}
@@ -199,8 +187,7 @@ export default function Home() {
 function ServicesCard({ text, image }) {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate("ChooseService")}
+    <View
       style={{
         margin: 10,
         shadowColor: "#000",
@@ -243,6 +230,6 @@ function ServicesCard({ text, image }) {
       >
         <Text className="text-white">{text}</Text>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 }
