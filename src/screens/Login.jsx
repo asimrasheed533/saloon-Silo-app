@@ -13,17 +13,17 @@ import { useNavigation } from "@react-navigation/native";
 export default function Login() {
   const navigation = useNavigation();
   return (
-    <View className="flex-1">
+    <ScrollView className="flex-1 bg-white">
       <StatusBar style="light" />
-      <View className="bg-[#dd2374] w-full h-[400px] items-center rounded-b-[30px]">
+      <View className="bg-[#dd2374] w-full  items-center rounded-b-[20px] ">
         <View className="mt-20">
           <Image source={require("../../assets/Slogo.png")} />
         </View>
         <View className="w-full items-start justify-start px-12">
-          <Text className="text-2xl font-semibold text-white mt-4">Login</Text>
+          <Text className="text-2xl font-semibold text-white my-8">Login</Text>
         </View>
       </View>
-      <View className="bg-white mx-4 rounded-[30px] py-12 absolute bottom-[200px] ">
+      <View className="bg-white shadow-lg mx-4 rounded-[30px] py-12 relative mt-[-20px] ">
         <View
           style={{
             borderColor: "lightgray",
@@ -75,9 +75,9 @@ export default function Login() {
           </Text>
         </TouchableOpacity>
       </View>
-      <View className="w-full items-center justify-center absolute bottom-[160px] ">
+      <View className="w-full items-center justify-center absolute bottom-[0px] ">
         <Text>
-          New User?{" "}
+          New User?
           <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
             <Text style={{ color: "#dd2374", fontWeight: "bold" }}>
               {" "}
@@ -86,6 +86,6 @@ export default function Login() {
           </TouchableOpacity>
         </Text>
       </View>
-    </View>
+    </ScrollView>
   );
 }

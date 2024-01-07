@@ -20,12 +20,13 @@ export default function SplashLog() {
         bottom-[300px]
         rounded-2xl
         py-5
-        px-4
+        mx-3
+        px-5
         self-center"
       >
         <Text
           style={{
-            fontSize: 24,
+            fontSize: 20,
             color: "#1E1E1E",
             fontWeight: "700",
             textAlign: "center",

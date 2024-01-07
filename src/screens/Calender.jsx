@@ -43,7 +43,7 @@ export default function Calender() {
             />
           </View>
         </View>
-        <View className="flex-row items-center justify-between mx-8 px-12">
+        <View className="flex-row items-center justify-center mx-8 px-12">
           <View className="bg-[#dd2374] h-20 w-20 rounded-full justify-center items-center">
             <Text className="text-2xl text-white">1</Text>
           </View>

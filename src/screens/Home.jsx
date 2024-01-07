@@ -88,7 +88,7 @@ export default function Home() {
       {/* // services container */}
       <View className="px-4">
         <View className="flex-1 justify-between flex-row items-center">
-          <Text className="text-xl font-bold text-black mt-4">
+          <Text className="text-sm font-bold text-black mt-4">
             What are you looking for?
           </Text>
           <TouchableOpacity
@@ -203,7 +203,7 @@ function ServicesCard({ text, image }) {
     >
       <Image
         style={{
-          width: 170,
+          width: 150,
           resizeMode: "cover",
           borderRadius: 10,
         }}

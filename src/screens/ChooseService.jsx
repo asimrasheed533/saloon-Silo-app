@@ -69,7 +69,7 @@ export default function ChooseService() {
           />
         </View>
       </View>
-      <View className="flex-row items-center justify-between mx-8 px-12">
+      <View className="flex-row items-center justify-center mx-8 px-12">
         <View className="bg-[#dd2374] h-20 w-20 rounded-full justify-center items-center">
           <Text className="text-2xl text-white">1</Text>
         </View>
@@ -84,7 +84,7 @@ export default function ChooseService() {
         <Text className="text-2xl font-medium text-black mt-4">
           Select Services
         </Text>
-        <View className="py-4 flex-wrap flex-row items-start justify-center gap-5">
+        <View className="py-4 flex-wrap flex-row items-start justify-center gap-3">
           {services.map((service, index) => (
             <TouchableOpacity
               key={index}
@@ -94,8 +94,8 @@ export default function ChooseService() {
               <Image
                 style={{
                   resizeMode: "cover",
-                  width: 70,
-                  height: 70,
+                  width: 60,
+                  height: 60,
                   borderRadius: 50,
                 }}
                 source={service.image}
@@ -122,6 +122,7 @@ export default function ChooseService() {
 
       {/* Choose Services Button */}
       <TouchableOpacity
+        onPress={() => navigation.navigate("Calender")}
         style={{
           backgroundColor: "#dd2374",
           borderRadius: 25,
