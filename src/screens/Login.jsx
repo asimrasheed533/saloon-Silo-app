@@ -75,7 +75,7 @@ export default function Login() {
           </Text>
         </TouchableOpacity>
       </View>
-      <View className="w-full items-center justify-center absolute bottom-[0px] ">
+      <View className="w-full items-center justify-center mt-4 ">
         <Text>
           New User?
           <TouchableOpacity onPress={() => navigation.navigate("Signup")}>

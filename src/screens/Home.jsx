@@ -100,7 +100,7 @@ export default function Home() {
           </TouchableOpacity>
         </View>
 
-        <View className="py-4 flex-wrap flex-row items-center justify-center gap-5">
+        <View className="py-4 flex-wrap flex-row items-center justify-center">
           <ServicesCard
             text="HairCut"
             image={require("../../assets/barder1.png")}
@@ -189,21 +189,21 @@ function ServicesCard({ text, image }) {
   return (
     <View
       style={{
-        margin: 10,
-        shadowColor: "#000",
-        shadowOffset: {
-          width: 0,
-          height: 2,
-        },
-        elevation: 5,
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
+        margin: 5,
+        // shadowColor: "#000",
+        // shadowOffset: {
+        //   width: 0,
+        //   height: 2,
+        // },
+        // elevation: 5,
+        // shadowOpacity: 0.25,
+        // shadowRadius: 3.84,
         borderRadius: 10,
       }}
     >
       <Image
         style={{
-          width: 150,
+          width: 170,
           resizeMode: "cover",
           borderRadius: 10,
         }}
@@ -219,13 +219,13 @@ function ServicesCard({ text, image }) {
           padding: 10,
           borderBottomLeftRadius: 10,
           borderBottomRightRadius: 10,
-          shadowColor: "#000",
-          shadowOffset: {
-            width: 0,
-            height: -2,
-          },
-          shadowOpacity: 0.25,
-          shadowRadius: 3.84,
+          // shadowColor: "#000",
+          // shadowOffset: {
+          //   width: 0,
+          //   height: -2,
+          // },
+          // shadowOpacity: 0.25,
+          // shadowRadius: 3.84,
         }}
       >
         <Text className="text-white">{text}</Text>
