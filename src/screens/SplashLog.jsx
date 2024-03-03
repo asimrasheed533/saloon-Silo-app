@@ -2,6 +2,11 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
+import {
+  responsiveHeight,
+  responsiveWidth,
+  responsiveFontSize,
+} from "react-native-responsive-dimensions";
 export default function SplashLog() {
   const navigation = useNavigation();
   return (
@@ -26,7 +31,7 @@ export default function SplashLog() {
       >
         <Text
           style={{
-            fontSize: 20,
+            fontSize: responsiveFontSize(2.5),
             color: "#1E1E1E",
             fontWeight: "700",
             textAlign: "center",
@@ -36,7 +41,7 @@ export default function SplashLog() {
         </Text>
         <Text
           style={{
-            fontSize: 14,
+            fontSize: responsiveFontSize(1.7),
             textAlign: "center",
             marginTop: 15,
           }}
@@ -47,13 +52,16 @@ export default function SplashLog() {
       </View>
       {/* log in buttons */}
       <TouchableOpacity
+        style={{
+          width: responsiveWidth(70),
+        }}
         onPress={() => navigation.navigate("Login")}
         className="
       bg-[#dd2374]
         absolute
         bottom-[200px]
         rounded-full
-        w-[70%]
+        
         py-5
         self-center
         items-center
@@ -61,7 +69,7 @@ export default function SplashLog() {
       >
         <Text
           style={{
-            fontSize: 16,
+            fontSize: responsiveFontSize(2),
             fontWeight: "700",
             textAlign: "center",
             color: "#FFFF",
@@ -71,13 +79,15 @@ export default function SplashLog() {
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
+        style={{
+          width: responsiveWidth(70),
+        }}
         onPress={() => navigation.navigate("Signup")}
         className="
 bg-white
 absolute
 bottom-[120px]
 rounded-full
-w-[70%]
 py-5
 self-center
 items-center
@@ -85,7 +95,7 @@ items-center
       >
         <Text
           style={{
-            fontSize: 16,
+            fontSize: responsiveFontSize(2),
             fontWeight: "700",
             textAlign: "center",
             color: "#BD175E",

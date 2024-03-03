@@ -11,6 +11,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import {
+  responsiveHeight,
+  responsiveWidth,
+  responsiveFontSize,
+} from "react-native-responsive-dimensions";
 export default function Signup() {
   const navigation = useNavigation();
   return (
@@ -32,7 +37,12 @@ export default function Signup() {
             />
           </View>
           <View className="w-full items-start justify-start px-8">
-            <Text className="text-2xl font-semibold text-white mt-4">
+            <Text
+              style={{
+                fontSize: responsiveFontSize(3),
+              }}
+              className=" font-semibold text-white mt-4"
+            >
               Sign Up
             </Text>
           </View>
@@ -100,12 +110,14 @@ export default function Signup() {
           </View>
 
           <TouchableOpacity
+            style={{
+              width: responsiveWidth(70),
+            }}
             onPress={() => navigation.navigate("MyTabs")}
             className="
       bg-[#dd2374]
       mt-10
         rounded-full
-        w-[70%]
         py-5
         self-center
         items-center
@@ -113,7 +125,7 @@ export default function Signup() {
           >
             <Text
               style={{
-                fontSize: 16,
+                fontSize: responsiveFontSize(2),
                 fontWeight: "700",
                 textAlign: "center",
                 color: "#FFFF",
