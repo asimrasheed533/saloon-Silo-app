@@ -86,39 +86,35 @@ export default function Home() {
         </ScrollView>
       </View>
       {/* // services container */}
-      <View className="px-4">
-        <View className="flex-1 justify-between flex-row items-center">
-          <Text className="text-sm font-bold text-black mt-4">
-            What are you looking for?
-          </Text>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("ChooseService")}
-          >
-            <Text className="text-sm font-medium  mt-4 text-[#dd2374]">
-              View all
-            </Text>
-          </TouchableOpacity>
-        </View>
 
-        <View className="py-4 flex-wrap flex-row items-center justify-center">
-          <ServicesCard
-            text="HairCut"
-            image={require("../../assets/barder1.png")}
-          />
-          <ServicesCard
-            text="NailCut"
-            image={require("../../assets/barder1.png")}
-          />
-          <ServicesCard
-            text="HairPainting"
-            image={require("../../assets/barder1.png")}
-          />
-          <ServicesCard
-            text="HairCut"
-            image={require("../../assets/barder1.png")}
-          />
-        </View>
+      <View className="flex-1 justify-between flex-row items-center px-4">
+        <Text className="text-sm font-bold text-black">
+          What are you looking for?
+        </Text>
+        <TouchableOpacity onPress={() => navigation.navigate("ChooseService")}>
+          <Text className="text-sm font-medium   text-[#dd2374]">View all</Text>
+        </TouchableOpacity>
       </View>
+
+      <View className="py-4 flex-wrap flex-row items-center justify-center">
+        <ServicesCard
+          text="HairCut"
+          image={require("../../assets/barder1.png")}
+        />
+        <ServicesCard
+          text="NailCut"
+          image={require("../../assets/barder1.png")}
+        />
+        <ServicesCard
+          text="HairPainting"
+          image={require("../../assets/barder1.png")}
+        />
+        <ServicesCard
+          text="HairCut"
+          image={require("../../assets/barder1.png")}
+        />
+      </View>
+
       {/* // barber container */}
       <View className="px-4">
         <Text className="text-2xl font-bold text-black mt-4">

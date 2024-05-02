@@ -46,6 +46,7 @@ export default function Login() {
           className="mx-4 flex-row items-center rounded-full  px-4"
         >
           <TextInput
+            secureTextEntry={true}
             className="w-full py-2 text-black  "
             placeholder="Password"
             placeholderTextColor="gray"

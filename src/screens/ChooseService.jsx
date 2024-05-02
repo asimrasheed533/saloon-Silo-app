@@ -11,6 +11,7 @@ import { CheckBadgeIcon } from "react-native-heroicons/outline";
 import { useNavigation } from "@react-navigation/native";
 import { ChevronLeftIcon } from "react-native-heroicons/outline";
 import { StatusBar } from "expo-status-bar";
+import BackIcon from "../../assets/BackIcon";
 
 export default function ChooseService() {
   const navigation = useNavigation();
@@ -60,7 +61,7 @@ export default function ChooseService() {
           onPress={() => navigation.goBack()}
           className=" rounded-full bg-slate-100 p-3"
         >
-          <ChevronLeftIcon size={20} strokeWidth={4} color="#dd2374" />
+          <BackIcon />
         </TouchableOpacity>
         <View className="absolute right-0 top-0 ">
           <Image

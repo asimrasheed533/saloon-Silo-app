@@ -6,18 +6,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import Login from "../screens/Login";
 import Signup from "../screens/Signup";
 import Home from "../screens/Home";
-
+import HomeIcon from "../../assets/HomeIcon";
+import UserIcon from "../../assets/UserIcon";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import {
-  HomeIcon,
-  CalendarIcon,
-  UserIcon,
-} from "react-native-heroicons/outline";
-import {
-  HomeIcon as HomeIconSolid,
-  UserIcon as UserIconSolid,
-  CalendarIcon as CalendarSolid,
-} from "react-native-heroicons/solid";
+
 import ChooseService from "../screens/ChooseService";
 import Calender from "../screens/Calender";
 import Profile from "../screens/Profile";
@@ -66,12 +58,9 @@ function MyTabs() {
         component={Home}
         options={{
           tabBarLabel: "",
-          tabBarIcon: ({ focused, color }) =>
-            focused ? (
-              <HomeIconSolid name="home-filled" size="34" color={color} />
-            ) : (
-              <HomeIcon name="home-filled" size="30" color={color} />
-            ),
+          tabBarIcon: ({ focused, color }) => {
+            return focused ? <HomeIcon /> : <HomeIcon filled />;
+          },
         }}
       />
       <Tab.Screen
@@ -79,12 +68,9 @@ function MyTabs() {
         component={ChooseService}
         options={{
           tabBarLabel: "",
-          tabBarIcon: ({ focused, color }) =>
-            focused ? (
-              <CalendarSolid name="home-filled" size="34" color={color} />
-            ) : (
-              <CalendarIcon name="home-filled" size="30" color={color} />
-            ),
+          tabBarIcon: ({ focused, color }) => {
+            return focused ? <HomeIcon /> : <HomeIcon filled />;
+          },
         }}
       />
       <Tab.Screen
@@ -92,12 +78,9 @@ function MyTabs() {
         component={Profile}
         options={{
           tabBarLabel: "",
-          tabBarIcon: ({ focused, color, size }) =>
-            focused ? (
-              <UserIconSolid name="home-filled" size="34" color={color} />
-            ) : (
-              <UserIcon name="home-outlined" size="30" color={color} />
-            ),
+          tabBarIcon: ({ focused, color, size }) => {
+            return focused ? <UserIcon /> : <UserIcon filled />;
+          },
         }}
       />
     </Tab.Navigator>
