@@ -1860,10 +1860,10 @@
     prompts "^2.4.0"
     semver "^7.5.2"
 
-"@react-native-picker/picker@^2.7.5":
-  version "2.7.5"
-  resolved "https://registry.npmjs.org/@react-native-picker/picker/-/picker-2.7.5.tgz#e43fcd65f260fa4f23e974ccb9fb7c1f7a9ff94a"
-  integrity sha512-vhMaOLkXSUb+YKVbukMJToU4g+89VMhBG2U9+cLYF8X8HtFRidrHjohGqT8/OyesDuKIXeLIP+UFYI9Q9CRA9Q==
+"@react-native-picker/picker@2.4.10":
+  version "2.4.10"
+  resolved "https://registry.npmjs.org/@react-native-picker/picker/-/picker-2.4.10.tgz#339c7bfc6e1d9a5e934122eaaa7767dc1c5fb725"
+  integrity sha512-EvAlHmPEPOwvbP6Pjg/gtDV3XJzIjIxr10fXFNlX5r9HeHw582G1Zt2o8FLyB718nOttgj8HYUTGxvhu4N65sQ==
 
 "@react-native/assets-registry@^0.72.0":
   version "0.72.0"
@@ -5796,11 +5796,6 @@ react-native-calendars@^1.1303.0:
   optionalDependencies:
     moment "^2.29.4"
 
-react-native-heroicons@^3.2.0:
-  version "3.2.1"
-  resolved "https://registry.npmjs.org/react-native-heroicons/-/react-native-heroicons-3.2.1.tgz"
-  integrity sha512-BPDEX9QTckzK0qTZB7Adfi0An1tu+hqwLf/WPoU0vwxvIv4YkyM6+LVq1cHAMIKRfwl9YlAuIcaaUvjYTcyVIA==
-
 react-native-phone-input@^1.3.7:
   version "1.3.7"
   resolved "https://registry.npmjs.org/react-native-phone-input/-/react-native-phone-input-1.3.7.tgz#d22c15ff41e11daea482b23e6efc44b3af06a984"
@@ -5819,11 +5814,6 @@ react-native-reanimated@~3.3.0:
     "@babel/preset-typescript" "^7.16.7"
     convert-source-map "^2.0.0"
     invariant "^2.2.4"
-
-react-native-responsive-dimensions@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.npmjs.org/react-native-responsive-dimensions/-/react-native-responsive-dimensions-3.1.1.tgz"
-  integrity sha512-Vo2OhWsphq0HgKsmeZOeyW+c+vsFn1ZaCFkGDgdeCEEiLriT76jGA1JlUjtrj27hvyo/xzeTlBZ+vBso1A84fw==
 
 react-native-responsive-screen@^1.4.2:
   version "1.4.2"

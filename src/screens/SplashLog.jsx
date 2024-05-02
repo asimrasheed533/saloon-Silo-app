@@ -2,11 +2,6 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
-import {
-  responsiveHeight,
-  responsiveWidth,
-  responsiveFontSize,
-} from "react-native-responsive-dimensions";
 export default function SplashLog() {
   const navigation = useNavigation();
   return (
@@ -31,7 +26,7 @@ export default function SplashLog() {
       >
         <Text
           style={{
-            fontSize: responsiveFontSize(2.5),
+            fontSize: 18,
             color: "#1E1E1E",
             fontWeight: "700",
             textAlign: "center",
@@ -41,7 +36,7 @@ export default function SplashLog() {
         </Text>
         <Text
           style={{
-            fontSize: responsiveFontSize(1.7),
+            fontSize: 12,
             textAlign: "center",
             marginTop: 15,
           }}
@@ -53,7 +48,7 @@ export default function SplashLog() {
       {/* log in buttons */}
       <TouchableOpacity
         style={{
-          width: responsiveWidth(70),
+          width: "70%",
         }}
         onPress={() => navigation.navigate("Login")}
         className="
@@ -69,7 +64,7 @@ export default function SplashLog() {
       >
         <Text
           style={{
-            fontSize: responsiveFontSize(2),
+            fontSize: 14,
             fontWeight: "700",
             textAlign: "center",
             color: "#FFFF",
@@ -80,7 +75,7 @@ export default function SplashLog() {
       </TouchableOpacity>
       <TouchableOpacity
         style={{
-          width: responsiveWidth(70),
+          width: "70%",
         }}
         onPress={() => navigation.navigate("Signup")}
         className="
@@ -95,7 +90,7 @@ items-center
       >
         <Text
           style={{
-            fontSize: responsiveFontSize(2),
+            fontSize: 14,
             fontWeight: "700",
             textAlign: "center",
             color: "#BD175E",

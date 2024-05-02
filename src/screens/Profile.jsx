@@ -9,10 +9,7 @@ import {
   ScrollView,
 } from "react-native";
 import React from "react";
-import {
-  ArrowLeftEndOnRectangleIcon,
-  LogoutIcon,
-} from "react-native-heroicons/outline";
+
 import { StatusBar } from "expo-status-bar";
 export default function Profile() {
   return (
@@ -98,13 +95,8 @@ export default function Profile() {
             </View>
           </View>
           <View className="w-full items-start px-6 mb-4">
-            <TouchableOpacity className="bg-red-600 rounded-full px-10 py-4 flex flex-row items-center justify-center gap-2">
+            <TouchableOpacity className="bg-red-600 rounded-full  px-8 py-3 flex flex-row items-center justify-center">
               <Text className="font-semibold text-white text-base">Logout</Text>
-              <ArrowLeftEndOnRectangleIcon
-                name="home-filled"
-                size="25"
-                color="white"
-              />
             </TouchableOpacity>
           </View>
         </SafeAreaView>

@@ -8,14 +8,10 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 
-import {
-  ChevronLeftIcon,
-  LockClosedIcon,
-  XCircleIcon,
-} from "react-native-heroicons/outline";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 import { Calendar, LocaleConfig } from "react-native-calendars";
+import BackIcon from "../../assets/BackIcon";
 export default function Calender() {
   const navigation = useNavigation();
   const [selected, setSelected] = useState("");
@@ -34,7 +30,7 @@ export default function Calender() {
             onPress={() => navigation.goBack()}
             className=" rounded-full bg-slate-100 p-3"
           >
-            <ChevronLeftIcon size={20} strokeWidth={4} color="#dd2374" />
+            <BackIcon />
           </TouchableOpacity>
           <View className="absolute right-0 top-0 ">
             <Image
@@ -123,7 +119,7 @@ export default function Calender() {
         >
           <View className="absolute right-0 top-0 p-2 ">
             <TouchableOpacity onPress={() => setModalVisible(false)}>
-              <XCircleIcon size={30} strokeWidth={2} color="#dd2374" />
+              <Text>X</Text>
             </TouchableOpacity>
           </View>
           <Image source={require("../../assets/done.png")} />

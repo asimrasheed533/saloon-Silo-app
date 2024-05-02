@@ -7,9 +7,7 @@ import {
   ScrollView,
 } from "react-native";
 import React, { useState } from "react";
-import { CheckBadgeIcon } from "react-native-heroicons/outline";
 import { useNavigation } from "@react-navigation/native";
-import { ChevronLeftIcon } from "react-native-heroicons/outline";
 import { StatusBar } from "expo-status-bar";
 import BackIcon from "../../assets/BackIcon";
 
@@ -103,19 +101,7 @@ export default function ChooseService() {
               />
               <Text className="text-center p-2">{service.name}</Text>
               {/* Checkmark or any other indicator */}
-              {service.isSelected && (
-                <CheckBadgeIcon
-                  name="home-filled"
-                  size="34"
-                  color="green"
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    right: 0,
-                    zIndex: 1,
-                  }}
-                />
-              )}
+              {service.isSelected && <BackIcon />}
             </TouchableOpacity>
           ))}
         </View>
